@@ -1,0 +1,27 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+
+import common.LoggerFactory;
+import common.Util;
+import common.ElementMap;
+import common.Logger;
+
+public class ToutTestSuite {
+	protected WebDriver 			driver;
+	protected Logger            	logger   = LoggerFactory.getLogger();
+	protected Util              	util     = new Util();
+	protected LoginPage   			login;
+	protected HomePage    			home;
+	protected ElementMap loginMap;
+	protected ElementMap homeMap;
+	protected String     sysuser;      
+	protected String     syspwd;
+	protected String	 touturl;
+	
+	@BeforeClass( alwaysRun = true )
+	public void intializePage() {
+		
+	}
+}

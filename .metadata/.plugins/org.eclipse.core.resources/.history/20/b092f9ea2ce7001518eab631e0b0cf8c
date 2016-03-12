@@ -1,0 +1,39 @@
+import java.util.Random;
+
+public class random {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long t = phoneNumberGenerator();
+		System.out.println(t);
+		String name= getName(6);
+		System.out.println(name);
+
+	}
+	public static long phoneNumberGenerator()
+	{
+		int len = 10;
+		long result=0;
+		String n ="";
+		Random random = new Random();
+		int[] num = new int[len];
+		for (int i = 0;i<10;i++)
+		{
+			n = n+random.nextInt(10);
+		}
+		result = Long.parseLong(n);
+		return result;
+	}
+	public static String getName(int len) {
+		final String ALPHA_NUM =  
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+		StringBuffer sb = new StringBuffer(len);  
+		for (int i=0;  i<len;  i++) {  
+			int ndx = (int)(Math.random()*ALPHA_NUM.length());  
+			sb.append(ALPHA_NUM.charAt(ndx));  
+		}
+		//logger.info("Constructed Name");
+		return sb.toString();  
+   }
+
+}

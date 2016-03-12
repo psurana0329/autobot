@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+/**
+ * @author prince
+ *
+ */
+public class NavigatePage extends ToutBaseMoldule{
+	public NavigatePage(WebDriver driver)
+	{
+		super(driver);
+	}
+}

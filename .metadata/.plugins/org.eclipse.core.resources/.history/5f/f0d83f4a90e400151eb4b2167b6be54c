@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uimap>
+	<page name="login">
+		<uielement name="username">
+			<locator>//input[@type='text']</locator>
+		</uielement>
+		<uielement name="password">
+			<locator>//input[@type='password']</locator>
+		</uielement>
+		<uielement name="submitlogin">
+			<locator>//button[@type='button']</locator>
+		</uielement>
+		<uielement name="loginerror.text">
+			<locator>//div[@id='message-panel']/div</locator>
+		</uielement>
+	</page>
+	<page name="navigation">
+		<uielement name="loginpage">
+			<locator>//div[@id='wrap_all']/ul[@id='mobile-advanced']/li[@id='menu-item-3953']/a/span[@class='avia-menu-text' and text()='Login']</locator>
+		</uielement>
+	</page>
+</uimap>

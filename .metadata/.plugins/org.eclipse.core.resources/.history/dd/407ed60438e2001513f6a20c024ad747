@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package pages;
+
+/**
+ * @author prince
+ *
+ */
+public class LoginPage extends ToutBaseMoldule {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+/*package autobot;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.get("http://www.toutapp.com");
+		//System.out.println("Successfully opened the website!!!");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebDriverWait wait = new WebDriverWait(driver, 300);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#avia-menu > #menu-item-3953 > a > span.avia-menu-text")));
+		//"xpath:"= //div[@id='wrap_all']/ul[@id='mobile-advanced']/li[@id='menu-item-3953']/a/span[@class='avia-menu-text' and text()='Login']
+		 
+		element.click();
+		//element = driver.findElement(By.id("log"));
+		//element.sendKeys("sample");
+		System.out.println("Successfully opened the website!!!");
+
+	}
+
+}*/

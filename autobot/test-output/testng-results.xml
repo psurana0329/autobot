@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[[2016-03-11 15:23:45]DEBG: Locator Key&Strategy -> loginpage :: //div[@id='header_main']//a//span[text()='Login']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:45]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='header_main']//a//span[text()='Login']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:47]DEBG: Clicked On :: clicked on the Login button.]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:48]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:50]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:50]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:50]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:52]DEBG: Send Keys On Element :: Email/UserName With Data : prince.surana@askmybraintrust.com]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:52]DEBG: Locator Key&Strategy -> password :: //input[@id='user_session_password']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:52]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:53]DEBG: Send Keys On Element :: Password With Data : Prince019]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:53]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:53]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:57]DEBG: Clicked On :: Submit Button.]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:23:58]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:00]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:00]DEBG: Login Successfull !!!]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:00]DEBG: Locator Key&Strategy -> usersigninmenu :: //div[@id='ajaxStatus']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:00]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='ajaxStatus']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:00]DEBG: Clicked On :: Button]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]DEBG: Locator Key&Strategy -> useremail :: //div[@id='navbar']//div/ul[2]/li[11]/ul/li[1]/a]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='navbar']//div/ul[2]/li[11]/ul/li[1]/a]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]INFO: Login Successfull with UserName: prince.surana@askmybraintrust.com]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]INFO: Starting Test logintestpositive]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]INFO: logintestpositive.Login Test Positive Successful :-> :### PASS]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]DEBG: ]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:01]INFO: Wait : 5.0 sec :: Waiting Before Logout]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:06]DEBG: Locator Key&Strategy -> logout :: //a[@id='nav-logout']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:06]DEVP: Element : //a[@id='nav-logout'] : Successfully Appeared On Page]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:06]DEBG: Locator Key&Strategy -> logout :: //a[@id='nav-logout']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:06]DEVP: ELEMENT FOUND WITH LOCATOR : //a[@id='nav-logout']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:06]DEBG: Clicked On :: Logout link]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:07]INFO: Logging Out...]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:07]INFO: Wait : 2.0 sec :: Waiting After Logout]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:09]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:09]DEVP: Element : //input[@id='user_session_email'] : Successfully Appeared On Page]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:09]DEVP: Element : //input[@id='user_session_email'] : Successfully Appeared On Page]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:09]INFO: Element Is Appeared in 0 Sec.]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:09]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:09]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:10]DEBG: Send Keys On Element :: Email/UserName With Data : prince.surana@askmybraintrust.com]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:10]DEBG: Locator Key&Strategy -> password :: //input[@id='user_session_password']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:10]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:11]DEBG: Send Keys On Element :: Password With Data : kdfjls]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:11]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:11]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:13]DEBG: Clicked On :: Submit Button.]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:14]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:16]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:16]DEBG: Login Successfull !!!]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:16]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:16]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:17]DEBG: Clicked On :: Submit Button.]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:18]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]DEBG: Locator Key&Strategy -> loginerror :: //div[contains(text(),'Incorrect email or password.')]]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]DEVP: ELEMENT FOUND WITH LOCATOR : //div[contains(text(),'Incorrect email or password.')]]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]DEBG: Getting Text On Element :: error message on the main page The Text is : Incorrect email or password.]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]INFO: Login Test Negative was Successfull]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]INFO: Starting Test logintestnegative]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]INFO: logintestnegative.Login Test Negative Successful :-> :### PASS]]>
+    </line>
+    <line>
+      <![CDATA[[2016-03-11 15:24:20]DEBG: ]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38454" started-at="2016-03-11T23:23:41Z" finished-at="2016-03-11T23:24:20Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38454" started-at="2016-03-11T23:23:41Z" finished-at="2016-03-11T23:24:20Z">
+      <class name="test.loginpagetest">
+        <test-method status="PASS" signature="intializePage()[pri:0, instance:test.loginpagetest@511baa65]" name="intializePage" is-config="true" duration-ms="18318" started-at="2016-03-11T15:23:41Z" finished-at="2016-03-11T15:24:00Z">
+          <reporter-output>
+            <line>
+              <![CDATA[[2016-03-11 15:23:45]DEBG: Locator Key&Strategy -> loginpage :: //div[@id='header_main']//a//span[text()='Login']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:45]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='header_main']//a//span[text()='Login']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:47]DEBG: Clicked On :: clicked on the Login button.]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:48]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:50]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:50]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:50]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:52]DEBG: Send Keys On Element :: Email/UserName With Data : prince.surana@askmybraintrust.com]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:52]DEBG: Locator Key&Strategy -> password :: //input[@id='user_session_password']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:52]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:53]DEBG: Send Keys On Element :: Password With Data : Prince019]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:53]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:53]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:57]DEBG: Clicked On :: Submit Button.]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:23:58]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:00]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:00]DEBG: Login Successfull !!!]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- intializePage -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.loginpagetest@511baa65]" name="setUp" is-config="true" duration-ms="0" started-at="2016-03-11T15:24:00Z" finished-at="2016-03-11T15:24:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTestPositive()[pri:0, instance:test.loginpagetest@511baa65]" name="loginTestPositive" duration-ms="1101" started-at="2016-03-11T15:24:00Z" finished-at="2016-03-11T15:24:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[[2016-03-11 15:24:00]DEBG: Locator Key&Strategy -> usersigninmenu :: //div[@id='ajaxStatus']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:00]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='ajaxStatus']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:00]DEBG: Clicked On :: Button]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]DEBG: Locator Key&Strategy -> useremail :: //div[@id='navbar']//div/ul[2]/li[11]/ul/li[1]/a]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='navbar']//div/ul[2]/li[11]/ul/li[1]/a]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]INFO: Login Successfull with UserName: prince.surana@askmybraintrust.com]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]INFO: Starting Test logintestpositive]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]INFO: logintestpositive.Login Test Positive Successful :-> :### PASS]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]DEBG: ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginTestPositive -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.loginpagetest@511baa65]" name="login" is-config="true" duration-ms="0" started-at="2016-03-11T15:24:00Z" finished-at="2016-03-11T15:24:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.loginpagetest@511baa65]" name="login" is-config="true" duration-ms="0" started-at="2016-03-11T15:24:01Z" finished-at="2016-03-11T15:24:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="loginTestNegative()[pri:1, instance:test.loginpagetest@511baa65]" name="loginTestNegative" duration-ms="19026" started-at="2016-03-11T15:24:01Z" finished-at="2016-03-11T15:24:20Z">
+          <reporter-output>
+            <line>
+              <![CDATA[[2016-03-11 15:24:01]INFO: Wait : 5.0 sec :: Waiting Before Logout]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:06]DEBG: Locator Key&Strategy -> logout :: //a[@id='nav-logout']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:06]DEVP: Element : //a[@id='nav-logout'] : Successfully Appeared On Page]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:06]DEBG: Locator Key&Strategy -> logout :: //a[@id='nav-logout']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:06]DEVP: ELEMENT FOUND WITH LOCATOR : //a[@id='nav-logout']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:06]DEBG: Clicked On :: Logout link]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:07]INFO: Logging Out...]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:07]INFO: Wait : 2.0 sec :: Waiting After Logout]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:09]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:09]DEVP: Element : //input[@id='user_session_email'] : Successfully Appeared On Page]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:09]DEVP: Element : //input[@id='user_session_email'] : Successfully Appeared On Page]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:09]INFO: Element Is Appeared in 0 Sec.]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:09]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:09]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:10]DEBG: Send Keys On Element :: Email/UserName With Data : prince.surana@askmybraintrust.com]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:10]DEBG: Locator Key&Strategy -> password :: //input[@id='user_session_password']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:10]INFO: Wait : 1.0 sec :: Waiting Before Entering Data]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:11]DEBG: Send Keys On Element :: Password With Data : kdfjls]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:11]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:11]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:13]DEBG: Clicked On :: Submit Button.]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:14]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:16]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:16]DEBG: Login Successfull !!!]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:16]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:16]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:17]DEBG: Clicked On :: Submit Button.]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:18]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]INFO: AJAX Loader Disappeared In : 2 Seconds]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]DEBG: Locator Key&Strategy -> loginerror :: //div[contains(text(),'Incorrect email or password.')]]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]DEVP: ELEMENT FOUND WITH LOCATOR : //div[contains(text(),'Incorrect email or password.')]]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]DEBG: Getting Text On Element :: error message on the main page The Text is : Incorrect email or password.]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]INFO: Login Test Negative was Successfull]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]INFO: Starting Test logintestnegative]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]INFO: logintestnegative.Login Test Negative Successful :-> :### PASS]]>
+            </line>
+            <line>
+              <![CDATA[[2016-03-11 15:24:20]DEBG: ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginTestNegative -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:test.loginpagetest@511baa65]" name="logout" is-config="true" duration-ms="0" started-at="2016-03-11T15:24:01Z" finished-at="2016-03-11T15:24:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:test.loginpagetest@511baa65]" name="logout" is-config="true" duration-ms="0" started-at="2016-03-11T15:24:20Z" finished-at="2016-03-11T15:24:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+      </class> <!-- test.loginpagetest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

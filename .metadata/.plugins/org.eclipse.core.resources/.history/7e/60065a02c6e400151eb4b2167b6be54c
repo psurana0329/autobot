@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package test;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import common.CheckPoint;
+
+import pages.ToutTestSuite;
+
+/**
+ * @author prince
+ *
+ */
+public class loginpagetest extends ToutTestSuite{
+	@BeforeClass(alwaysRun=true)
+	public void setUp() {
+		
+	}
+	@BeforeMethod(alwaysRun = true)
+	public void login() {
+		driver.get(touturl);
+		home.NavigateToLoginPage();
+	}
+	@AfterMethod(alwaysRun=true)
+	public void logout() {
+		home.logout();
+	}
+	
+	@Test
+	public void loginTestPositive() throws Exception {
+		login.setLoginCredentials(sysuser, syspwd);
+		login.submitLogin();
+		//Check
+	}
+	
+}

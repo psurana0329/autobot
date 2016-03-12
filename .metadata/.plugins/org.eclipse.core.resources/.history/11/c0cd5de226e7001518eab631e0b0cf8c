@@ -1,0 +1,28 @@
+import java.util.Random;
+
+public class random {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long t = phoneNumberGenerator();
+		//System.out.println(t);
+
+	}
+	public static long phoneNumberGenerator()
+	{
+		int len = 10;
+		long result=0;
+		String n ="";
+		Random random = new Random();
+		int[] num = new int[len];
+		for (int i = 0;i<10;i++)
+		{
+			n = n+random.nextInt(10);
+		}
+		System.out.println(n);
+		//String number=num.toString();
+		result = Long.parseLong(n);
+		return result;
+	}
+
+}

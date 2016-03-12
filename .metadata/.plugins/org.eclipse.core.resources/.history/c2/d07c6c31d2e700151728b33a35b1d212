@@ -1,0 +1,57 @@
+/**
+ * 
+ */
+package test;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+
+import common.CheckPoint;
+import common.Constants;
+import pages.ToutTestSuite;
+
+/**
+ * @author prince
+ *
+ */
+public class loginpagetest extends ToutTestSuite{
+	@BeforeClass(alwaysRun=true)
+	public void setUp() {
+		/*String driverPath = "/Users/prince/Documents/AutomationWorkspace/autobot/config/TestConfig/chromedriver";
+		System.out.println("*******************");
+		System.out.println("launching chrome browser");
+		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();*/
+	}
+	@BeforeMethod(alwaysRun = true)
+	public void login() {
+	}
+	@AfterMethod(alwaysRun=true)
+	public void logout() {
+		home.logout();
+	}
+	
+	@Test
+	public void loginTestPositive() throws Exception {
+//		home.logout();
+//		login.setLoginCredentials(sysuser, syspwd);
+//		login.submitLogin();
+		CheckPoint.mark("loginTestPositive", login.isUserExists(sysuser), "Login Successfull");
+	}
+	@Test
+	public void loginTestNegative() throws Exception {
+		home.logout();
+		login.loginAs(sysuser, null);
+		login.submitLogin();
+		CheckPoint.mark("loginTestNegative", login.errorLogin("Incorrect email or password."), "Login Test Negative Successful");
+	}
+	
+}

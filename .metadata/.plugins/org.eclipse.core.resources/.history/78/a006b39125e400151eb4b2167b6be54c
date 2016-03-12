@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package common;
+
+/**
+ * @author prince
+ *
+ */
+public class Constants {
+	public final static String configDir             = ConfigReader.getConfigDir();
+	public final static String testconfigFile        = configDir+"config/TestConfig/TestEnv.properties";
+	public final static String baseTestDataFile      = configDir+"config/TestData/BaseData.properties";
+	
+}

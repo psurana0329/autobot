@@ -1,0 +1,6 @@
+conf.dir=/Users/prince/Documents/AutomationWorkspace/autobot
+tout.url=https://toutapp.com
+browser=firefox
+log.level=6
+sys.user=prince.surana@askmybraintrust.com
+sys.pwd=Prince019

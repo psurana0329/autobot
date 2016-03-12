@@ -1,0 +1,114 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
+
+public class random {
+
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		long t = phoneNumberGenerator();
+		System.out.println(t);
+		String name= getName(6);
+		System.out.println(name+" "+getName(5));
+		String email = emailBuild(name);
+		System.out.println(email);
+		writeToCsv("testing", 150);
+		
+
+	}
+	public static long phoneNumberGenerator()
+	{
+		int len = 10;
+		long result=0;
+		String n ="";
+		Random random = new Random();
+		int[] num = new int[len];
+		for (int i = 0;i<10;i++)
+		{
+			n = n+random.nextInt(10);
+		}
+		result = Long.parseLong(n);
+		return result;
+	}
+	public static String getName(int len) {
+		final String ALPHA_NUM =  
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+		StringBuffer sb = new StringBuffer(len);  
+		for (int i=0;  i<len;  i++) {  
+			int ndx = (int)(Math.random()*ALPHA_NUM.length());  
+			sb.append(ALPHA_NUM.charAt(ndx));  
+		}
+		//logger.info("Constructed Name");
+		return sb.toString();  
+   }
+	public static String emailBuild(String name)
+	{
+		String email = "";
+		Random random = new Random();
+		String[] domains = {"gmail","live","yahoo","toutapp"};
+		email = name+"@"+domains[random.nextInt(domains.length)]+".com";
+		return email;
+	}
+	public static void writeToCsv(String fileName, int len)
+	{
+		//CSV file Header
+		final String FILE_HEADER="FirstName,LastName,Email,PhoneNumber";
+		//Delimeter used in CSV file
+		final String COMMA_DELIMETER=",";
+		final String NEW_LINE_SEPARATOR="\n";
+		String path = "/Users/prince/Desktop/"+fileName+".csv";
+		FileWriter fw = null;
+		try {
+			fw=new FileWriter(path);
+			//write the CSV file header
+			fw.append(FILE_HEADER.toString());
+			//add a new line separator after the header
+			fw.append(NEW_LINE_SEPARATOR);
+			for (int i= 0;i<len;i++)
+			{
+				//writing firstname
+				String fname=getName(6);
+				fw.append(fname);
+				fw.append(COMMA_DELIMETER);
+				fw.append(getName(5));
+				fw.append(COMMA_DELIMETER);
+				fw.append(emailBuild(fname));
+				fw.append(COMMA_DELIMETER);
+				fw.append(String.valueOf(phoneNumberGenerator()));
+				fw.append(NEW_LINE_SEPARATOR);
+			}
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Error in CSV!!!");
+			e.printStackTrace();
+		} finally {
+			try{
+				fw.flush();
+				fw.close();
+			} catch (IOException e) {
+				System.out.println("Error while flushing CSV");
+				e.printStackTrace();
+			}
+		}
+	}
+	public static void deleteCSV(String fileName) throws Exception
+	{
+		String path = "/Users/prince/Desktop/"+fileName;
+		File file = new File(path);
+		try{
+		if (file.delete()){
+			System.out.println(file.getName()+" deleted successfully!!");
+		}else{
+			System.out.println("something is wrong!!!");
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+	}
+
+
+}

@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Mar 11 15:23:41 PST 2016</td>
+</tr>
+<tr><td>Total time:</td><td>38 seconds (38454 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.loginpagetest.loginTestNegative()'><b>loginTestNegative</b><br>Test class: test.loginpagetest<br/>
+<a href="#Output-1863702030" onClick='toggleBox("Output-1863702030", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1863702030" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1863702030">
+[2016-03-11 15:24:01]INFO: Wait : 5.0 sec :: Waiting Before Logout<br/>
+[2016-03-11 15:24:06]DEBG: Locator Key&Strategy -> logout :: //a[@id='nav-logout']<br/>
+[2016-03-11 15:24:06]DEVP: Element : //a[@id='nav-logout'] : Successfully Appeared On Page<br/>
+[2016-03-11 15:24:06]DEBG: Locator Key&Strategy -> logout :: //a[@id='nav-logout']<br/>
+[2016-03-11 15:24:06]DEVP: ELEMENT FOUND WITH LOCATOR : //a[@id='nav-logout']<br/>
+[2016-03-11 15:24:06]DEBG: Clicked On :: Logout link<br/>
+[2016-03-11 15:24:07]INFO: Logging Out...<br/>
+[2016-03-11 15:24:07]INFO: Wait : 2.0 sec :: Waiting After Logout<br/>
+[2016-03-11 15:24:09]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']<br/>
+[2016-03-11 15:24:09]DEVP: Element : //input[@id='user_session_email'] : Successfully Appeared On Page<br/>
+[2016-03-11 15:24:09]DEVP: Element : //input[@id='user_session_email'] : Successfully Appeared On Page<br/>
+[2016-03-11 15:24:09]INFO: Element Is Appeared in 0 Sec.<br/>
+[2016-03-11 15:24:09]DEBG: Locator Key&Strategy -> username :: //input[@id='user_session_email']<br/>
+[2016-03-11 15:24:09]INFO: Wait : 1.0 sec :: Waiting Before Entering Data<br/>
+[2016-03-11 15:24:10]DEBG: Send Keys On Element :: Email/UserName With Data : prince.surana@askmybraintrust.com<br/>
+[2016-03-11 15:24:10]DEBG: Locator Key&Strategy -> password :: //input[@id='user_session_password']<br/>
+[2016-03-11 15:24:10]INFO: Wait : 1.0 sec :: Waiting Before Entering Data<br/>
+[2016-03-11 15:24:11]DEBG: Send Keys On Element :: Password With Data : kdfjls<br/>
+[2016-03-11 15:24:11]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']<br/>
+[2016-03-11 15:24:11]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']<br/>
+[2016-03-11 15:24:13]DEBG: Clicked On :: Submit Button.<br/>
+[2016-03-11 15:24:14]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation<br/>
+[2016-03-11 15:24:16]INFO: AJAX Loader Disappeared In : 2 Seconds<br/>
+[2016-03-11 15:24:16]DEBG: Login Successfull !!!<br/>
+[2016-03-11 15:24:16]DEBG: Locator Key&Strategy -> submitlogin :: //input[@id='user_session_submit']<br/>
+[2016-03-11 15:24:16]DEVP: ELEMENT FOUND WITH LOCATOR : //input[@id='user_session_submit']<br/>
+[2016-03-11 15:24:17]DEBG: Clicked On :: Submit Button.<br/>
+[2016-03-11 15:24:18]INFO: Wait : 1.0 sec :: Waiting After For AJAX Operation<br/>
+[2016-03-11 15:24:20]INFO: AJAX Loader Disappeared In : 2 Seconds<br/>
+[2016-03-11 15:24:20]DEBG: Locator Key&Strategy -> loginerror :: //div[contains(text(),'Incorrect email or password.')]<br/>
+[2016-03-11 15:24:20]DEVP: ELEMENT FOUND WITH LOCATOR : //div[contains(text(),'Incorrect email or password.')]<br/>
+[2016-03-11 15:24:20]DEBG: Getting Text On Element :: error message on the main page The Text is : Incorrect email or password.<br/>
+[2016-03-11 15:24:20]INFO: Login Test Negative was Successfull<br/>
+[2016-03-11 15:24:20]INFO: Starting Test logintestnegative<br/>
+[2016-03-11 15:24:20]INFO: logintestnegative.Login Test Negative Successful :-> :### PASS<br/>
+[2016-03-11 15:24:20]DEBG: <br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>test.loginpagetest@511baa65</td></tr>
+<tr>
+<td title='test.loginpagetest.loginTestPositive()'><b>loginTestPositive</b><br>Test class: test.loginpagetest<br/>
+<a href="#Output-1585239756" onClick='toggleBox("Output-1585239756", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1585239756" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1585239756">
+[2016-03-11 15:24:00]DEBG: Locator Key&Strategy -> usersigninmenu :: //div[@id='ajaxStatus']<br/>
+[2016-03-11 15:24:00]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='ajaxStatus']<br/>
+[2016-03-11 15:24:00]DEBG: Clicked On :: Button<br/>
+[2016-03-11 15:24:01]DEBG: Locator Key&Strategy -> useremail :: //div[@id='navbar']//div/ul[2]/li[11]/ul/li[1]/a<br/>
+[2016-03-11 15:24:01]DEVP: ELEMENT FOUND WITH LOCATOR : //div[@id='navbar']//div/ul[2]/li[11]/ul/li[1]/a<br/>
+[2016-03-11 15:24:01]INFO: Login Successfull with UserName: prince.surana@askmybraintrust.com<br/>
+[2016-03-11 15:24:01]INFO: Starting Test logintestpositive<br/>
+[2016-03-11 15:24:01]INFO: logintestpositive.Login Test Positive Successful :-> :### PASS<br/>
+[2016-03-11 15:24:01]DEBG: <br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>test.loginpagetest@511baa65</td></tr>
+</table><p>
+</body>
+</html>

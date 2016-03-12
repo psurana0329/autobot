@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+
+/**
+ * @author prince
+ *
+ */
+public class HomePage extends ToutBaseMoldule{
+	public HomePage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+	public void NavigateToLoginPage(){
+		Click(HomePageMap.getLocator("loginpage"), "clicked on the Login button.");
+		waitForLoading();
+	}
+}

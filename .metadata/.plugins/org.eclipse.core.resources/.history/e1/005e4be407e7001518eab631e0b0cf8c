@@ -1,0 +1,245 @@
+/**
+ * 
+ */
+package common;
+import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import common.ConfigReader;
+import common.SelConfig;
+/**
+ * @author prince
+ *
+ */
+public class WebDriverFactory {
+	private static Logger  logger   = LoggerFactory.getLogger();
+	/**
+	 * Constructs Application URL to load home page by WebDriver Session
+	 * @return - application URL
+	 */
+	private static String getUrl(){
+		String touturl;
+		touturl = ConfigReader.getConfiguration(SelConfig.TOUTURL, null);
+		return "http://" + touturl;
+	}
+	/**
+	 * Constructs GRID HUB URL to Set the Browser Settings
+	 * @return - application URL
+	 */
+	private static String getGridHubUrl(){
+		String gridHost;
+		String gridPort;
+		gridHost = ConfigReader.getConfiguration(
+				SelConfig.RC_HOST, SelConfig.DEFAULT_RC_HOST);
+		gridPort = ConfigReader.getConfiguration(
+				SelConfig.PORT, SelConfig.DEFAULT_PORT);
+		return "http://"+gridHost+":"+gridPort+"/wd/hub";
+	}
+	/**
+	 * 
+	 * @param gridHubUrl
+	 * @param browser
+	 * @param website
+	 * @return
+	 */
+	public static WebDriver getInstance(String gridHubUrl, String browser, String website) {
+		WebDriver driver = null;
+		//Setting up Desired Capabilities
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setJavascriptEnabled(true);
+		
+		if(driver == null) {
+			if ("".equals(browser)) {
+				browser = ConfigReader.getConfiguration(SelConfig.BROWSER, SelConfig.DEFAULT_BROWSER);
+			}
+			if ("".equals(website)) {
+				website = getUrl();
+			}
+			if (browser.equalsIgnoreCase("iexplorer")){
+				//driver = new InternetExplorerDriver();
+				capability = DesiredCapabilities.internetExplorer();
+				capability.setCapability(
+						InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+						true);
+			}else if (browser.equalsIgnoreCase("firefox")){
+				//setting Webdriver as Firefox
+			    driver = new FirefoxDriver();
+			    capability = DesiredCapabilities.firefox();
+			    capability.setCapability(FirefoxDriver.PROFILE, true);
+			    capability.setCapability(CapabilityType.TAKES_SCREENSHOT, true);
+			}else if (browser.equals("chrome")){
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--start-maximized");
+				capability = DesiredCapabilities.chrome();
+				capability.setCapability(ChromeOptions.CAPABILITY, options);
+				
+			}else{
+				capability = DesiredCapabilities.htmlUnit();
+				driver	   = new HtmlUnitDriver(true);
+				return driver;
+			}
+			// Create Remote WebDriver
+			gridHubUrl = getGridHubUrl();
+			try {
+				driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+			//Setting Driver Implicit Time out for An Element
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+			//loading Browser with App URL
+			driver.get(website);
+			//
+			driver.manage().window().maximize();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			//js.executeScript("window.resizeTo(1440, 900);");
+			js.executeScript("window.moveTo(0,0);");
+			js.executeScript("window.resizeTo(screen.width,screen.height);");
+		}
+		DriverSession.setDriver(driver);
+		return driver;
+	}
+	/**
+	 * 
+	 * @param browser
+	 * @param website
+	 * @return
+	 */
+	/*public static WebDriver getInstance(String browser, String website) {
+		WebDriver driver = null;
+		
+		if(driver == null) {
+			if ("".equals(browser)) {
+				browser = ConfigReader.getConfiguration(
+						SelConfig.BROWSER, 
+						SelConfig.DEFAULT_BROWSER);
+			}
+			if ("".equals(website)) {
+				website = getUrl();
+			}
+			//IE
+			if (browser.equals("iexplorer")){
+				driver 	   = new InternetExplorerDriver();
+
+			}else if (browser.equals("firefox")){
+				//setting Webdriver as Firefox
+			    driver = new FirefoxDriver();
+			    //Setting Driver Implicit Time out for An Element
+				driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			//Chrome Driver
+			}else if (browser.equals("chrome")){
+				setChromeDriver();
+				//driver = new ChromeDriver();
+			}else{
+				driver	   = new HtmlUnitDriver(true);
+				driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+				return driver;
+			}
+					
+			//loading Browser with App URL
+			driver.get(website);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			//js.executeScript("window.resizeTo(1440, 900);");
+			js.executeScript("window.moveTo(0,0);");
+			js.executeScript("window.resizeTo(screen.width,screen.height);");
+		}
+		DriverSession.setDriver(driver);
+		return driver;
+	}*/
+	public static WebDriver openBrowser(String nameOfBrowser, String url)
+	{
+		if ("".equals(nameOfBrowser)) {
+			nameOfBrowser = ConfigReader.getConfiguration(
+					SelConfig.BROWSER, 
+					SelConfig.DEFAULT_BROWSER);
+		}
+		if ("".equals(url)) {
+			url = getUrl();
+		}
+		WebDriver driver = null;
+		if (nameOfBrowser.equalsIgnoreCase("firefox"))
+		{
+			driver = new FirefoxDriver();
+		}
+		else if (nameOfBrowser.equalsIgnoreCase("chrome"))
+		{
+			System.setProperty("webdriver.chrome.driver", Constants.chromedriver);
+			driver=new ChromeDriver();
+		}
+		else if (nameOfBrowser.equalsIgnoreCase("ie"))
+		{
+			DesiredCapabilities dc = DesiredCapabilities.internetExplorer();
+			dc.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			driver = new InternetExplorerDriver(dc);
+		}
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		int width=(int)toolkit.getScreenSize().getWidth();
+		int height=(int)toolkit.getScreenSize().getHeight();
+		driver.manage().window().setSize(new Dimension(width,height));
+		driver.get(url);
+		return driver;
+	}
+	/*
+	 * Helper method to set version and platform for a specific browser
+	 * 
+	 * @param capability : DesiredCapabilities object coming from the selected
+	 * browser
+	 * 
+	 * @param version : browser version
+	 * 
+	 * @param platform : browser platform
+	 * 
+	 * @return DesiredCapabilities
+	 */
+	private static DesiredCapabilities setVersionAndPlatform(
+			DesiredCapabilities capability, String version, String platform) {
+		if ("MAC".equalsIgnoreCase(platform)) {
+			capability.setPlatform(Platform.MAC);
+		} else if ("LINUX".equalsIgnoreCase(platform)) {
+			capability.setPlatform(Platform.LINUX);
+		} else if ("XP".equalsIgnoreCase(platform)) {
+			capability.setPlatform(Platform.XP);
+		} else if ("WINDOWS".equalsIgnoreCase(platform)) {
+			capability.setPlatform(Platform.WINDOWS);
+		} else {
+			capability.setPlatform(Platform.ANY);
+		}
+
+		if (version != null) {
+			capability.setVersion(version);
+		}
+		return capability;
+	}
+	/*
+	 * Helper method to set ChromeDriver location into the right system property
+	 */
+	private static void setChromeDriver() {
+		String chromeBinary = System.getProperty(" ");
+		if (chromeBinary == null || chromeBinary.equals("")) {
+			/*String os = System.getProperty("os.name").toLowerCase().substring(0, 3);
+			logger.debug("OS Name From System Property : "+os);
+			chromeBinary = Constants.chromedriver+ (os.equals("win") ? ".exe" : "");*/
+			chromeBinary = Constants.chromedriver;
+			logger.debug("Chrome Binary                : "+chromeBinary);
+			System.setProperty("webdriver.chrome.driver", chromeBinary);
+		}
+	}
+}

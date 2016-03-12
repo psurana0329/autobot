@@ -1,0 +1,344 @@
+/**
+ * 
+ */
+package common;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Properties;
+import java.util.Random;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
+import org.testng.Assert;
+
+import common.ConfigReader;
+import common.SelConfig;
+import common.Constants;
+import common.LoggerFactory;
+import common.Logger;
+
+/**
+ * @author prince
+ *
+ */
+public class Util {
+	public Logger logger = LoggerFactory.getLogger();
+	public Properties props = new Properties();
+	/**
+	 * 
+	 * @param issueType
+	 */
+	public void screenShot(String issueType) {
+		String fileName = System.currentTimeMillis()+"."+issueType+".png";
+		String dir = ConfigReader.getScreenDir();
+		File screenshotDir =	new File(dir+"//screencapture");
+		screenshotDir.mkdir();
+		if ( fileName.contains("/") ) {
+			fileName = fileName.replaceAll("/", "-");
+			logger.info(fileName);
+		}
+		try {
+			WebDriver augmentedDriver = new Augmenter().augment(DriverSession.getDriver());
+			File screenshot = ((TakesScreenshot)augmentedDriver).
+                            							getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(screenshot, new File(screenshotDir+"//"+fileName));
+			String[] path = (dir.split("[\\\\]"));
+			String screen = path[path.length-1];
+			logger.info("Screen Shot Was Strored at : "+screen+"/"+fileName);
+		} catch(Exception e) {
+			logger.debug(e.getMessage());
+		}
+	}
+	/**
+	 * 
+	 * Sleeps to the specified Milliseconds !
+	 */
+	public void sleep(long milliSec, String info){
+		 if (info != null)
+			 logger.info("Wait : "+(milliSec * .001)+" sec :: "+info);
+		 try {
+		       Thread.sleep(milliSec);
+		 } catch (InterruptedException e) {
+		       e.printStackTrace();
+		     }
+    }
+	/**
+	 * 
+	 * Sleeps to the specified Milliseconds !
+	 */
+	public void sleep(long milliSec){
+		this.sleep(milliSec, null);		 
+    }
+	/*
+	 * Phone Number Generator
+	 */
+	public long phoneNumberGenerator(){
+		long result=0;
+		String n ="";
+		Random random = new Random();
+		for (int i = 0;i<10;i++)
+		{
+			n = n+random.nextInt(10);
+		}
+		result = Long.parseLong(n);
+		return result;
+   }
+	/**
+	 * 
+	 * @param email
+	 * @return
+	 */
+	public String buildEmail(String email){
+		if ( !email.contains("@") )
+			return email + "@" + email + ".com";
+		else
+			return email;
+	}
+	/**
+	 * 
+	 * @param len
+	 * @return
+	 */
+	public String getAlphafirst(int len) {
+		final String ALPHA_NUM =  
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+		StringBuffer sb = new StringBuffer(len);  
+		for (int i=0;  i<len;  i++) {  
+			int ndx = (int)(Math.random()*ALPHA_NUM.length());  
+			sb.append(ALPHA_NUM.charAt(ndx));  
+		}
+		logger.info("Constructed First Name");
+		return sb.toString();  
+   }
+	public String getAlphalast(int len) {
+    	//int chars = (int) this.getRandomNumber(0, charCount);
+    	String name = "u"+getAlphaNumeric(charCount).toLowerCase();
+    	logger.info("Constructed Last Name :"+ name);
+    	return name;
+        //Calendar calendar = new GregorianCalendar();
+        //String newName = "m"+this.getRandNumber()+String.format("%1$tM%1$tS",
+                					//calendar);
+    	//String name = RandomStringUtils.randomAlphanumeric(8).trim();
+    }
+    
+    // Considers the default character count as 10 for the Unique Name
+    public String getUniqueName() {
+    	return this.getUniqueName(10);
+    }
+    /**
+	 * 
+	 * Cleans all the files in directory
+	 * @param directoryName - directory name where the files to be cleaned
+	 */
+	public void deleteFiles(String directoryName){
+		File directory = new File(directoryName);
+		// Get all files in directory
+		File[] files = directory.listFiles();
+		for (File file : files)	{
+		// Delete each file
+		   if (!file.delete())
+		      {
+		// Failed to delete file
+		   logger.debug("Failed to delete "+file);
+		   }
+		 }
+	}
+	/***
+	 * Gets the current year
+	 * @return
+	 */
+	public String getCurrentYear(){
+		Calendar cal = new GregorianCalendar(); 
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+		String s = sdf.format(cal.getTime());
+		logger.info("Value of year is " + s);
+		return s;
+	}
+	/**
+	 * 
+	 * Format current system time to mm-dd-yyyy and add x day
+	 * @param addDay - This many days can add
+	 */
+	public String getFormattedDate(int addDay){
+        return this.getFormattedDate(addDay, "/");
+    }
+	/**
+	 * 
+	 * Format current system time to mm/dd/yyyy and add x day
+	 * @param addDay - This many days can add
+	 */
+	public String getFormattedDate(int addDay, String seperator){
+        Calendar calendar = new GregorianCalendar(); 
+        calendar.add(Calendar.DATE, addDay);
+        String s = String.format("%1$tm"+seperator+"%1$td"+seperator+"%1$tY", calendar);
+        logger.info("Date : "+s);
+        return s; 
+    }
+	/**
+	 * 
+	 * Format current system time to mm/dd/yyyy and add x day
+	 * @param addDay - This many days can add
+	 */
+	public String getMonthFormattedDate(int addMonth){
+        Calendar calendar = new GregorianCalendar(); 
+        calendar.add(Calendar.MONTH, addMonth);
+        String s = String.format("%1$tm/%1$td/%1$tY", calendar);
+        logger.info("Date : "+s);
+        return s; 
+    }
+	public String getCurrentFormattedTimeStamp(){
+        Calendar calendar = new GregorianCalendar(); 
+        String s = String.format("%1$th%1$tm%1$ts%1$tm/%1$td/%1$tY", calendar);
+        logger.info("Date : "+s);
+        return s; 
+    }
+	/**
+	 * 
+	 * Format current system time to mm/dd/yyyy and add x day
+	 * @param addDay - This many days can add
+	 */
+	public String getYearFormattedDate(int addYear){
+        Calendar calendar = new GregorianCalendar(); 
+        calendar.add(Calendar.YEAR, addYear);
+        String s = String.format("%1$tm/%1$td/%1$tY", calendar);
+        logger.info("Date : "+s);
+        return s; 
+    }
+	/**
+	 * 
+	 * Format current system time to mm/dd/yyyy and add x day
+	 * @param addDay - This many days can add
+	 */
+	public String getWeekFormattedDate(int addWeek){
+        Calendar calendar = new GregorianCalendar(); 
+        calendar.add(Calendar.WEEK_OF_YEAR, addWeek);
+        String s = String.format("%1$tm/%1$td/%1$tY", calendar);
+        logger.info("Date : "+s);
+        return s; 
+    }
+	/**
+	 * 
+	 * Format current system time to mm/dd/yyyy and add x day
+	 * @param addDay - This many days can add
+	 */
+	public String getMinutePlus(int addMin){
+        Calendar calendar = new GregorianCalendar(); 
+        calendar.add(Calendar.MINUTE, addMin);
+        return ""+calendar.get(Calendar.MINUTE); 
+    }
+	public String getHourPlus(int addHour){
+        Calendar calendar = new GregorianCalendar(); 
+        calendar.add(Calendar.HOUR, addHour);
+        return ""+calendar.get(Calendar.HOUR); 
+    }
+	/**
+	 * Get Hour of Day
+	 * @return
+	 */
+	public String getHourPlus() {
+		Calendar calendar = new GregorianCalendar();
+		return ""+calendar.get(Calendar.HOUR_OF_DAY);
+	}
+	/**
+	 * 
+	 * @param difference
+	 * @return
+	 */
+	public String getDateRelativeToday(int difference, String format) {
+        Calendar cal = new GregorianCalendar();
+        cal.add(Calendar.DATE, difference);
+        //String formatSpec = getStringData("date_format_ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.format(cal.getTime());
+    }
+	/**
+	 * 
+	 * @param format
+	 * @return
+	 */
+	public String getSimpleDateFormat(String format){
+		Format formatter;
+		Date date = new Date();
+
+		formatter = new SimpleDateFormat(format);
+		String s = formatter.format(date);
+        return s;
+	}
+	public boolean verifyTextContains(String actualText, String expText) {
+		if (actualText.toLowerCase().contains(expText.toLowerCase())){
+			logger.info(" Actual Text From Application Web UI   --> : "+ actualText);
+			logger.info(" Expected Text From Application Web UI --> : "+ expText);
+			logger.info("###Verification MATCHED !!!");
+			return true;
+		}
+		else{
+			logger.info(" Actual Text From Application Web UI   --> : "+ actualText);
+			logger.info(" Expected Text From Application Web UI --> : "+ expText);
+			logger.info("###Verification DOES NOT MATCH !!!");
+			return false;
+		}
+			   
+	}
+	    /**
+		 * Checks for the expected string is Matched with actual String and Prints both in log
+		 * @param actualText - actual Text picked up from application under Test
+		 * @param expText - expected Text to be Matched with actual text
+		 * @return
+		 */
+	public boolean verifyTextMatch(String actualText, String expText) {
+		if (actualText.equals(expText)){
+			logger.info(" Actual Text From Application Web UI   --> : "+ actualText);
+			logger.info(" Expected Text From Application Web UI --> : "+ expText);
+			logger.info("###Verification MATCHED !!!");
+			return true;
+		}else{
+			logger.info(" Actual Text From Application Web UI   --> : "+ actualText);
+			logger.info(" Expected Text From Application Web UI --> : "+ expText);
+			logger.info("###Verification DOES NOT MATCH !!!");
+		    return false;}
+	}
+	/**
+	 * 
+	 * @param actualValue
+	 * @param expValue
+	 * @return
+	 */
+	public boolean verifyTextMatch(int actualValue, int expValue) {
+		String actualText = String.valueOf(actualValue);
+		String expText    = String.valueOf(expValue);
+		return verifyTextMatch(actualText, expText);
+	}
+	public boolean verifyTextMatch(Long actualValue, int expValue) {
+		String actualText = String.valueOf(actualValue);
+		String expText    = String.valueOf(expValue);
+		return verifyTextMatch(actualText, expText);
+	}
+	/**
+	 * 
+	 * @param object
+	 * @return
+	 */
+	public boolean verifyNotNULL(Object object) {
+		logger.info("The java Object is : " + object.getClass());
+		boolean flag = false;
+		if( object != null)
+			flag = true;
+		return flag;
+	}
+	
+	
+	
+}

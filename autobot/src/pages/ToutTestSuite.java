@@ -1,0 +1,83 @@
+package pages;
+
+import java.awt.Toolkit;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
+
+import common.LoggerFactory;
+import common.SelConfig;
+import common.Util;
+import common.WebDriverFactory;
+import common.ConfigReader;
+import common.ElementMap;
+import common.Logger;
+
+public class ToutTestSuite {
+	protected WebDriver 			driver;
+	//protected WebDriverFactory 		wdf;
+	protected Logger            	logger   = LoggerFactory.getLogger();
+	protected Util              	util     = new Util();
+	protected LoginPage   			login;
+	protected HomePage    			home;
+	protected ElementMap loginMap;
+	protected ElementMap homeMap;
+	protected String     sysuser;      
+	protected String     syspwd;
+	protected String	 touturl;
+	
+	@BeforeClass( alwaysRun = true )
+	public void intializePage() {
+		driver = WebDriverFactory.openBrowser("","");
+//construct pages
+		login       = PageFactory.initElements(driver, LoginPage.class);
+		home        = PageFactory.initElements(driver, HomePage.class);
+//construct global Data
+		
+		sysuser  = home.toutAutoUser;
+		syspwd   = home.toutAutoPassword;
+		home.NavigateToLoginPage();
+		login.loginAs(sysuser, syspwd);	
+	}
+	/*
+	 * Utility method to launch browser
+	 * 
+	 */
+	/**
+	 * Closes the current Session
+	 */
+	protected void quitSession() {
+		driver.close();
+	}
+	protected Boolean verifyElementTextMatch(String locator, String expText) throws Exception {
+		return home.verifyElementTextMatch(locator, expText);
+	}
+	protected Boolean verifyElementTextContains(String locator, String expText) throws Exception {
+		return home.verifyElementTextContains(locator, expText);
+	}
+	protected Boolean verifyTextMatch(String actText, String expText) throws Exception {
+		return home.verifyTextMatch(actText, expText);
+	}
+	protected Boolean verifyTextContains(String actText, String expText) throws Exception {
+		return home.verifyTextContains(actText, expText);
+	}
+	protected Boolean verifyElementPresent(String locator) throws Exception {
+		return home.isElementPresent(locator);
+	}
+	protected Boolean verifyElementDisplayed(String locator, String info) throws Exception {
+		return home.isDisplayed(locator, info);
+	}
+	protected Boolean verifyElementEnabled(String locator, String info) throws Exception {
+		return home.isEnabled(locator, info);
+	}
+	protected void refresh(){
+		home.refresh();
+	}
+	protected void logout(){
+		home.logout();
+	}
+}

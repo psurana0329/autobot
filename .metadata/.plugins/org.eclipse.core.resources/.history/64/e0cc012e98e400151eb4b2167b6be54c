@@ -1,0 +1,75 @@
+/**
+ * 
+ */
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+/**
+ * @author prince
+ *
+ */
+public class LoginPage extends ToutBaseMoldule {
+
+	/**
+	 * @param driver
+	 */
+	public LoginPage(WebDriver driver)
+	{
+		super(driver);
+	}
+	public void setLoginCredentials(String email, String pwd)
+	{
+		SendKeys(getElementByXpath(loginMap.getLocator("username")), email, "Email/UserName");
+		SendKeys(getElementByXpath(loginMap.getLocator("password")), pwd, "Password");
+	}
+	public void submitLogin()
+	{
+		Click(loginMap.getLocator("submitlogin"), "Submit Button.");
+		logger.info("Logged in as user: ");
+	}
+	
+	
+
+}
+/*package autobot;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.get("http://www.toutapp.com");
+		//System.out.println("Successfully opened the website!!!");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebDriverWait wait = new WebDriverWait(driver, 300);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#avia-menu > #menu-item-3953 > a > span.avia-menu-text")));
+		//"xpathLogin:"= //div[@id='wrap_all']/ul[@id='mobile-advanced']/li[@id='menu-item-3953']/a/span[@class='avia-menu-text' and text()='Login']
+		//"xpathStartFreeTrial:"=.//div/ul[@id='mobile-advanced']/li[@id='menu-item-4190']/a/span[@class='avia-menu-text' and text()='Start FREE Trial']
+		//"xpathUsername:"=//input[@id='user_session_email']
+		//"xpathPassword:"=//input[@id='user_session_password']
+		//"xpathSent:"=//strong[text()='Sent']
+		//"xpathClickToCall:"=//div[@id='filter-select-area']/div[@class='cc-filter-select']/div[@class='pane jspScrollable']/div[@class='jspContainer']/div[@class='click-to-call']/div
+		 
+		element.click();
+		//element = driver.findElement(By.id("log"));
+		//element.sendKeys("sample");
+		System.out.println("Successfully opened the website!!!");
+
+	}
+
+}*/

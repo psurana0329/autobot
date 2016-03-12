@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package common;
+
+/**
+ * @author prince
+ *
+ */
+public class SelConfig {
+	public static Logger logger   = LoggerFactory.getLogger();
+	public static final String DEFAULT_RC_HOST     = "localhost";
+	public static final String RC_HOST             = "rc.hostname";
+	public static final String DEFAULT_PORT        = "4444";
+	public static final String PORT                = "rc.port";
+	public static final String DEFAULT_BROWSER     = "chrome";
+	public static final String BROWSER             = "browser";
+	public static final String DEFAULT_LOG_LEVEL   = "4";
+	public static final String LOG_LEVEL           = "log.level";
+	public static final String DEFAULT_SPEED       = "1000";
+	public static final String SPEED               = "speed";
+	public static final String TOUTURL			   = "https://www.toutapp.com";
+	public static final String SYS_USER            = "prince@toutapp.com";		//Need to change this to Automation User
+	public static final String SYS_PWD             = "Prince019";					
+	public static final String ENV_PROP_FILE       = "env.prop";
+	public static final String DEFAULT_PROP_FILE   = "env.properties";
+	public static final String DEFAULT_CONFIG_DIR  = "";
+	public static final String CONFIG_DIR          = "conf.dir";
+	public static final String WEBDRIVER_REMOTE    = "remote";
+	public static final String SCREEN_DIR   	   = "screenshots.dir";
+
+}

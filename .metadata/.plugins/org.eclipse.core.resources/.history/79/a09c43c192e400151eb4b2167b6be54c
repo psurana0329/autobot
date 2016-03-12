@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.ConfigReader;
+import common.ElementMap;
+import common.SelConfig;
+import common.SeleniumDriver;
+
+/**
+ * @author prince
+ *
+ */
+public class ToutBaseMoldule extends SeleniumDriver {
+	public ToutBaseMoldule(WebDriver driver) {
+		super(driver);
+	}
+	public ElementMap loginMap = new ElementMap("login");
+	public ElementMap NavigatePageMap = new ElementMap("navigation");
+	public String touturl = ConfigReader.getConfiguration(SelConfig.TOUTURL, SelConfig.TOUTURL);
+	public String toutAutoUser = ConfigReader.getConfiguration(SelConfig.SYS_USER, SelConfig.SYS_USER);
+	public String toutAutoPassword = ConfigReader.getConfiguration(SelConfig.SYS_PWD, SelConfig.SYS_PWD);
+}

@@ -1,0 +1,59 @@
+/**
+ * 
+ */
+package common;
+
+/**
+ * @author prince
+ *
+ */
+public class SelConfig {
+	public static Logger logger   = LoggerFactory.getLogger();
+	public static final String DEFAULT_RC_HOST     = "localhost";
+	public static final String RC_HOST             = "rc.hostname";
+	public static final String DEFAULT_PORT        = "4444";
+	public static final String PORT                = "rc.port";
+	public static final String DEFAULT_BROWSER     = "firefox";
+	public static final String BROWSER             = "browser";
+	public static final String DEFAULT_LOG_LEVEL   = "4";
+	public static final String LOG_LEVEL           = "log.level";
+	public static final String DEFAULT_SPEED       = "1000";
+	public static final String SPEED               = "speed";
+	public static final String DEFAULT_SYS_USER    = "sysadmin";
+	public static final String SYS_USER            = "sys.user";
+	public static final String DEFAULT_SYS_PWD     = "abc123";
+	public static final String SYS_PWD             = "sys.pwd";
+	public static final String DEFAULT_SCRIPT      = "ddos_wrapper.pl";
+	public static final String SCRIPT              = "perl.script";
+	public static final String DDR_NAME            = "ddr.name";
+	public static final String DDR_REPL            = "repl.dest";
+	public static final String DDR_CMPL            = "ddr.cmpl";
+	public static final String DDMC_IP             = "host.ip";
+	public static final String DDMC_HOST           = "host.name";
+	public static final String DDR_LIST            = "ddr.list";
+	public static final String DDR_51              = "ddr.51";
+	public static final String DDR_52              = "ddr.52";
+	public static final String DDR_53              = "ddr.53";
+	public static final String DDR_54              = "ddr.54";
+	public static final String DDR_ART             = "ddr.art";
+	public static final String DDR_ART51           = "ddr.art51";
+	public static final String ENV_PROP_FILE       = "env.prop";
+	public static final String DEFAULT_PROP_FILE   = "env.properties";
+	public static final String DEFAULT_CONFIG_DIR  = "";
+	public static final String CONFIG_DIR          = "conf.dir";
+	public static final String VERSION             = "version";
+	public static final String PLATFORM            = "platform";
+	public static final String DEFAULT_PLATFORM    = "WINDOWS";
+	public static final String BUILD_NUM           = "build";
+	public static final String CB_RES              = "cbresult";
+	public static final String WEBDRIVER_REMOTE    = "remote";
+	public static final String SCREEN_DIR   	   = "screenshots.dir";
+	public static final String PROJECT   	   	   = "tcms_project";
+	public static final String RELEASE             = "release";
+	public static final String TESTPLAN   	   	   = "tcms_test_plan";
+	public static final String CONFIG   	   	   = "tcms_config";
+	public static final String PHASE   	   	   	   = "tcms_phase";	
+	public static final String USER   	   	   	   = "tcms_user";
+	public static final String TCMS   	   	   	   = "tcms";
+
+}

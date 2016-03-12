@@ -1,0 +1,82 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
+
+import common.LoggerFactory;
+import common.SelConfig;
+import common.Util;
+import common.WebDriverFactory;
+import common.ConfigReader;
+import common.ElementMap;
+import common.Logger;
+
+public class ToutTestSuite {
+	protected WebDriver 			driver;
+	protected Logger            	logger   = LoggerFactory.getLogger();
+	protected Util              	util     = new Util();
+	protected LoginPage   			login;
+	protected HomePage    			home;
+	protected ElementMap loginMap;
+	protected ElementMap homeMap;
+	protected String     sysuser;      
+	protected String     syspwd;
+	protected String	 touturl;
+	
+	@BeforeClass( alwaysRun = true )
+	public void intializePage() {
+		/*String remotesession = ConfigReader.getConfiguration(SelConfig.WEBDRIVER_REMOTE, 
+				SelConfig.WEBDRIVER_REMOTE);
+		if (remotesession.equalsIgnoreCase("yes")) {
+			driver      = WebDriverFactory.getInstance("","", "");
+			logger.debug("WEBDRIVER IS STARTING ON REMOTE SESSION");
+		}else {
+			driver      = WebDriverFactory.getInstance("","");
+			logger.debug("WEBDRIVER IS STARTING ON LOCAL SESSION");
+		}*/
+//construct pages
+		login       = PageFactory.initElements(driver, LoginPage.class);
+		home        = PageFactory.initElements(driver, HomePage.class);
+		//construct global Data
+		sysuser  = home.toutAutoUser;
+		syspwd   = home.toutAutoPassword;
+		touturl	 = home.touturl;
+		login.loginAs(sysuser, syspwd);
+		
+		
+	}
+	/**
+	 * Closes the current Session
+	 */
+	protected void quitSession() {
+		driver.close();
+	}
+	protected Boolean verifyElementTextMatch(String locator, String expText) throws Exception {
+		return home.verifyElementTextMatch(locator, expText);
+	}
+	protected Boolean verifyElementTextContains(String locator, String expText) throws Exception {
+		return home.verifyElementTextContains(locator, expText);
+	}
+	protected Boolean verifyTextMatch(String actText, String expText) throws Exception {
+		return home.verifyTextMatch(actText, expText);
+	}
+	protected Boolean verifyTextContains(String actText, String expText) throws Exception {
+		return home.verifyTextContains(actText, expText);
+	}
+	protected Boolean verifyElementPresent(String locator) throws Exception {
+		return home.isElementPresent(locator);
+	}
+	protected Boolean verifyElementDisplayed(String locator, String info) throws Exception {
+		return home.isDisplayed(locator, info);
+	}
+	protected Boolean verifyElementEnabled(String locator, String info) throws Exception {
+		return home.isEnabled(locator, info);
+	}
+	protected void refresh(){
+		home.refresh();
+	}
+	protected void logout(){
+		home.logout();
+	}
+}

@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.ElementMap;
+import common.SeleniumDriver;
+
+/**
+ * @author prince
+ *
+ */
+public class ToutBaseMoldule extends SeleniumDriver {
+	public ToutBaseMoldule(WebDriver driver) {
+		super(driver);
+	}
+	public ElementMap loginMap = new ElementMap("login");
+}

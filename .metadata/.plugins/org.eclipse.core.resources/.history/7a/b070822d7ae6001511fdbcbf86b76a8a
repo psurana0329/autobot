@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uimap>
+	<page name="login">
+		<uielement name="username">
+			<locator>//input[@id='user_session_email']</locator>
+		</uielement>
+		<uielement name="password">
+			<locator>//input[@id='user_session_password']</locator>
+		</uielement>
+		<uielement name="submitlogin">
+			<locator>//input[@id='user_session_submit']</locator>
+		</uielement>
+		<uielement name="loginerror">
+			<locator>//div[contains(text(),'Incorrect email or password.')]</locator>
+		</uielement>
+		
+		
+		
+		
+	</page>
+	<page name="home">
+		<uielement name="loginpage">
+			<locator>//div[@id='wrap_all']/ul[@id='mobile-advanced']/li[@id='menu-item-3953']/a/span[@class='avia-menu-text' and text()='Login']</locator>
+		</uielement>
+		<uielement name="logout">
+			<locator>//a[@id='nav-logout']</locator>
+		</uielement>
+		<uielement name="useremail">
+			<locator>//*[@id='navbar']/div/div/div/ul[2]/li[11]/ul/li[1]/a</locator>
+		</uielement>
+		
+		<uielement name="usersigninmenu">
+			<locator>//div[@id='ajaxStatus']</locator>
+		</uielement>
+	</page>
+</uimap>
